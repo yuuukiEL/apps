@@ -1,330 +1,197 @@
-html{width: 100%;}
-
-
-body,h1,h2,h3,p,ul,ol{
-  margin: 0;
-  padding: 0;}
-
-body{
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --border-color: #bdc3c7;
+}
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
     margin: 0 auto;
-    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
-    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
 }
 
+h1, h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
 
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input, button, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
 
 button {
-  /* 背景色を無色に */
-  background: transparent;
-  /* 枠線を消す */
-  border: none;
-  /* クリックした際に枠線をnone消す */
-  outline: none;
-  /* 影を消す */
-  box-shadow: none;
-}
-
-.search_container{
-    box-sizing: border-box;
-    position: relative;
-    border: 1px solid #999;
-    display: block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    height: 2.3em;
-    width: 265px;
-    overflow: hidden;
-  }
-  .search_container input[type="text"]{
-    border: none;
-    height: 2.0em;
-  }
-  .search_container input[type="text"]:focus {
-    outline: 0;
-  }
-  .search_container input[type="submit"]{
-    cursor: pointer;
-    font-family: FontAwesome;
-    border: none;
-    background: #3879D9;
+    background-color: var(--primary-color);
     color: #fff;
-    position: absolute;
-    width: 3.5em;
-    height: 3.0em;
-    right: 0px;
-    top: -3px;
-    outline : none;
-  }
-
-main{background-color: #ececec;}
-
-.chat{
-  font-size: 32px;
-  border-left: solid #FF6E05 1.8vw;
-  padding-left: 1.8vw;
-  margin: 1.8vw 2vw 0 0.2vw;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.border_padding{
-  padding: 0 0 0.5vw 0;
-  border-bottom: solid #e3e3e3 2px;
-  margin: 0 2vw;
+button:hover {
+    background-color: #2980b9;
 }
 
-.section{
-padding-left: 2.5vw;
+.item-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
-.article{
-  display: flex;
+.item-input input {
+    flex: 1;
 }
 
-.block{
-  min-width: 1035px;
-  background-color: #fff;
-  margin-top: 1.5vw;
-  padding-top: 1vw;
+.remove-item-input {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
-.flex_div_goukei{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  margin: 2.5vw 0 0 1vw;
+.remove-item-input:hover {
+    background-color: #c0392b;
 }
 
-.flex_div_goukei h1{
-  font-size: 2.5em;
-  margin-left: 2vw;
+#add-item-input {
+    background-color: var(--secondary-color);
+    margin-bottom: 10px;
 }
 
-.flex_div_goukei h3{
-  margin: 0 0 0 1.5vw;
-  font-size: 2em;
-  color: red;
+#add-item-input:hover {
+    background-color: #27ae60;
 }
 
-.flex_div_goukei small{
-  margin: 0.5vw 0 0 0;
-  font-size: 1em;
+.qr-link {
+    display: block;
+    width: 200px;
+    margin: 30px auto 0;
+    padding: 15px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.flex_div_border_top{
-  display: flex;
-  width: 73vw;
-  max-height: 47.5vh;
-  background-color: #fff;
-  position: relative;
+.qr-link:hover {
+    background-color: #27ae60;
 }
 
-.img_div{
-  width: 250px;
-  margin-left: 1.5vw;
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.border_div{
-  display: flex;
-  margin: 0 2vw 0 2vw;
-  padding: 1vw 0;
-  border-bottom: solid #e3e3e3 2px;
-  width: 100%;
+.item-table th,
+.item-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-
-
-.syouhin_box{
-  width: 44vw;
+.item-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
-.syouhin_box h2{
-  word-break: break-all;
-  line-height: 1.5em;
-  font-size: 1.5em;
-  margin-top: 2.5vw;
+.item-table tbody tr:hover {
+    background-color: #f9f9f9;
 }
 
-.syouhin_box p{
-  font-size: 2em;
-  margin: 0.5vw 5vw 0vw 0;
-  position: absolute;
-  right: 0;
-  bottom: 0.5vw;
+.item-table tfoot {
+    font-weight: bold;
 }
 
-.syouhin_img{
-  width: 14vw;
+.item-table tfoot td {
+    border-top: 2px solid #e0e0e0;
 }
 
-.chat_delete{
-  margin: 3vw 3.2vw 0 0;
-  text-align: right;
+.delete-item {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: background-color 0.3s ease;
 }
 
-.x_twitter{
-  width: 24vw;
-  border: 1px solid #ececec;
-  margin: 1.5vw 0 1.5vw 2.5vw;
-  max-height: 650px;
+.delete-item:hover {
+    background-color: #ff1a1a;
 }
 
-.quantity {
-  /* 👇デフォルトのスタイルを解除 */
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  /* 👇スタイル */
-  display: inline-block;
-  width: 10vw; /* 幅 */
-  height: 3em; /* 高さ */
-  margin-right: 15vw;
-  padding: 0.6em 1.5em 0.6em 0.5em; /* 文字周りの余白 */
-  cursor: pointer; /* カーソルを指に */
-  line-height: 1.4; /* 行高 */
-  font-size: 0.95em; /* フォントサイズ */
-  font-weight: 700; /* 太字に */
-  color: #333; /* 文字色 */
-  border-radius: 4px; /* 角丸 */
-  background-color: #f7f9fb; /* 背景色 */
-  border: solid 1px #e1e8ef; /* 枠線 */
-  box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15); /* 影 */
-  /* 👇三角マークを作る */
-  background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%),  linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%);
-  background-size: 5px 5px, 5px 5px;
-  background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
-  background-repeat: no-repeat;
-}
-/* フォーカス時 */
-.quantity:focus {
-  outline: 0;
-  border-color: #b0c5ff; /* 枠線の色を変更 */
-}
-/* IEでデフォルトの矢印を消す */
-.quantity::-ms-expand {
-  display: none;
+.no-items {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
 }
 
-.chat_bottom{
-  display: flex;
-  justify-content: left;
-  position: relative;
-  width: 73vw;
-  padding-bottom: 2vw;
-  background-color: #fff;
+#cash-payment {
+    margin-top: 10px;
 }
 
-.chat_bottom_bottom_margin{
-  width: 73vw;
-  height: 1.5vw;
-  background-color: #ececec;
-}
-
-.chat_bottom_bottom_padding{
-  width: 73vw;
-  height: 2.5vw;
-  background-color: #fff;
-}
-
-.chat_bottom_div{
-  display: flex;
-}
-
-.chat_bottom_div_position{
-  display: flex;
-  position: absolute;
-  bottom: 2.5vw;
-  right: 2.5vw;
-}
-
-.flex_div h1{
-  margin-left: 15vw;
-}
-
-.flex_div h3 {
-  margin-top: 10px;
-  margin-left: 3vw;
-  font-size: 32px;
-  color: red;
-}
-
-.flex_div small{
-  font-size: 14px;
-  margin-top: 20px;
-  margin-left: 5px;
-}
-
-.flex_div{
-  display: flex;
-  position: absolute;
-  margin-top: 3vw;
-  bottom: 1vw;
-}
-
-.selection_BA{
-  margin: 0 20px;
-  border-radius: 100px;
-  width: 15vw;
-  padding: 15px;
-  background: rgb(255, 216, 20);
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  font-weight:bold;
-  
-}
-
-.submit{
-  margin: 0 0 0vw 1vw;
-  padding: 0.5vw 1vw 0.5vw 1vw;
-  border-radius: 20px;
-  background-color: rgb(255, 216, 20);
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 12.5vw;
-  border:none;
-  box-shadow: 0 4px 0 rgb(228, 193, 17);
-  position: absolute;
-  left: 10vw;
-  top: -0.2vw;
-}
-
-.submit2{
-  margin: 0 0 0vw 1vw;
-  padding: 0.5vw 1vw 0.5vw 1vw;
-  border-radius: 20px;
-  background-color: rgb(255, 216, 20);
-  color: #000;
-  text-decoration: none;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 15vw;
-  border:none;
-  box-shadow: 0 4px 0 rgb(228, 193, 17);
-}
-
-.submit:hover {
-  transform: translateY(4px);
-  box-shadow: none;
-}
-
-.submit2:hover {
-  transform: translateY(4px);
-  box-shadow: none;
-}
-
-.secret_text{
-  font-size: 1.5em;
-  color: red;
-  display: none;
-}
-
-.syouhin_box:empty + .secret_text{
-  display: block;
+#change-amount {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1em;
 }
